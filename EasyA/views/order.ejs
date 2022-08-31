@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Store - EasyAccess</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .body{
+            margin: 0;
+        }
+    </style> 
+    <script>
+        var comma = (digit)=>{
+            var formatter =  new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'NGN'
+            });
+            return formatter.format(digit)
+        };
+    </script>
+</head>
+
+<body class="p-2" style="background-color: white;">
+    <div class="bg-white body" style="width: 99vw; height: 100vh; position: fixed; overflow: scroll;">
+    <div class="row justify-content-center">
+    <div class="container col-sm-8">
+            <div class="row photos">
+                <% 
+                    var comma = (digit)=>{
+                        var formatter =  new Intl.NumberFormat('en-US', {
+                            style: 'currency',
+                            currency: 'NGN'
+                        });
+                        return formatter.format(digit)
+                    }
+                    var category = {
+                        sr: "Single Room",
+                        rp: "Room and Parlor",
+                        sc: "Self Contain",
+                        ft: "Flat"
+                    }
+                    if(home){ for(let i = 0; i<home[0].files.length; i++){ 
+                %>
+                <!-- <img src="/photo/<%= home[0].files[i] %>" alt="" class="col-sm-3"> -->
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="/photo/<%= home[0].files[i] %>"><img class="img-fluid" src="/photo/<%= home[0].files[i] %>"></a></div>
+                <% } %>
+            </div>
+    </div>
+    <div class=" col-sm-6">
+        <h3 class="align-center row">
+            <b class="col-6 text-right">Lodge/House Name:</b> <span class="col-6 text-left"><%= home[0].name %></span><br>
+            <b class="col-6 text-right">Address:</b> <span class="col-6 text-left"><%= home[0].address %></span><br>
+            <b class="col-6 text-right">Category:</b> <span class="col-6 text-left"><%= category[home[0].category] %></span><br>
+            <b class="col-6 text-right">Distance from Campus:</b> <span class="col-6 text-left"><%= home[0].distance %> Meter</span><br>
+            <b class="col-6 text-right">Price:</b><span class="col-6 text-left"><%= comma(home[0].price) %></span> <br>
+        </h3>
+    </div><br>
+    <div class="row">
+        <br><a href="/details?id=<%= home[0].id %>" id="post_btn" onClick="" class="btn btn-primary">ORDER NOW! <br/> (<%= comma(home[0].price) %>)</a>
+    </div>
+    <% } %>
+    </div>
+</body>
+</html>

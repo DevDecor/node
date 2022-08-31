@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>easyaccess</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+</head>
+
+<body>
+    <body class="bg-gradient-primary">
+        <div class="container">
+          <div class="card shadow-lg o-hidden border-0 my-5">
+            <div class="card-body p-0">
+              <div class="text-center">
+                <div class="">
+                  <div class="p-5">
+                    <div class="text-center">
+                      <h4 class="text-dark mb-4">Enroll an Appartment</h4>
+                    </div>
+                    <form class="user" method="POST" enctype="multipart/form-data" action="/enroll">
+                      <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <input class="form-control form-control-user" type="text" id="name"
+                          placeholder="Lodge Name" name="name" required>
+                        </div>
+                        <div class="col-sm-5">
+                          <input class="form-control form-control-user" type="number" id="distance"
+                          placeholder="Distance" name="distance" required>
+                        </div>
+                        <div class="col-1">
+                            <label for="distance" class="text-primary"><h3>meter</h3></label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <textarea cols="5" class="form-control form-control-user" id="adderess" placeholder="Address" name="address" required></textarea>
+                      </div>
+                      <div class="form-group">
+                        <div class="row align-center"><input type="number" class="form-control form-control-user col-6" name="price" placeholder="Price"><div class="col-3 text-primary">Naira</div></div>
+                      </div>
+                      <h3>Facilities</h3>
+                      <div class="form-group row">
+                          <div class="col-md-3">
+                              <label for="water"><h4>Water</h4></label>
+                              <select class="form-control" name="water" id="water">
+                                  <option value="tp">Tap</option>
+                                  <option value="wl">Well</option>
+                                  <option value="no">No water</option>
+                              </select>
+                          </div>
+                          <div class="col-md-3">
+                            <label for="electricity"><h4>Electricity</h4></label>
+                            <select class="form-control" name="electricity" id="electricity">
+                                <option value="ng">Nepa + Generator</option>
+                                <option value="np">Nepa</option>
+                                <option value="gn">Generator</option>
+                                <option value="no">No Electricity</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3">
+                            <label for="fence"><h4>Secured?</h4></label>
+                            <select class="form-control" name="fence" id="fence">
+                                <option value="hg">Highly Secured</option>
+                                <option value="md">Fenced</option>
+                                <option value="ls">No Gates</option>
+                                <option value="no">Not fenced</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3">
+                            <label for="category"><h4>Category</h4></label>
+                            <select class="form-control" name="category" id="category">
+                                <option value="sr">Single Room</option>
+                                <option value="rp">Room and Parlour</option>
+                                <option value="sc">Self Contain</option>
+                                <option value="ft">Flat</option>
+                            </select>
+                          </div>
+                          <div class="container">
+                            <div class="">
+                              <label for="files"><h4>Upload Photo(s)</h4></label>
+                              <input type="file" class="form-control" name="files" id="files" multiple>
+                            </div>
+                          </div>
+                      </div>
+                      <button class="btn btn-primary btn-block text-white btn-user"
+                      type="submit">Enroll</button>
+                        <hr>
+                    </form>
+                    <div class="text-center"><a class="small" href="/forgot-password">Save Draft</a>
+                    </div>
+                    <div class="text-center"><a class="small" href="/login">Go Home</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/current-day.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Store - EasyAccess</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">
+</head>
+<body>
+    <script src="https://js.paystack.co/v1/inline.js"></script> 
+    <script>
+    </script>
+        <form class="form" method="POST" action="/details" id="paymentForm">
+        <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+        <input type="hidden" class="form-control" id="email" name="home_id" value="<%= home[0].id %>" required />
+        </div>
+        <div class="form-group">
+        <label for="first-name">Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" />
+        </div>
+        <div class="form-submit">
+        <button type="submit"> Pay </button>
+        </div>
+    </form>
+    </body>
+    </html>
